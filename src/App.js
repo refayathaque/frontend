@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import WhitelistIPs from "./WhitelistIPs/WhitelistIPs";
+import AllEnvironments from "./AllEnvironments";
 
 function App() {
+  const environments = [
+    "ditgovcatmig",
+    "ditgovperfmig",
+    "ditgovuatmig",
+    "ditgovdevmig",
+  ];
+
+  const serverTypes = [
+    "dockermanager",
+    "dockerworker",
+    "appserver",
+    "appserver-upload",
+    "agent",
+    "alfresco",
+  ];
+
+  const accountsAndSecurityGroups = [
+    {
+      account: "DIT GovCloud",
+      securityGroups: ["NARA-safelist", "ECSWhitelist", "bastion-sg"],
+    },
+    {
+      account: "DIT US Commercial",
+      securityGroups: [
+        "NARA-safelistCommercial",
+        "ECSWhitelistCommercial",
+        "hoo-bastion-sgCommercial",
+        "boo-bastion-sgCommercial",
+        "koo-bastion-sgCommercial",
+      ],
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <WhitelistIPs
+        accountsAndSecurityGroups={accountsAndSecurityGroups}
+      ></WhitelistIPs>
+      <AllEnvironments environments={environments} serverTypes={serverTypes}></AllEnvironments>
     </div>
   );
 }
