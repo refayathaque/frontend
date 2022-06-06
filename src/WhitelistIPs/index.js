@@ -1,10 +1,10 @@
 import Account from "./Account";
-import Form from "./Form";
+import Form from "./Forms";
 
-function WhitelistIPs({ accountsAndSecurityGroups }) {
+export default function Parent({ accountsAndSecurityGroups }) {
   const renderAccounts = accountsAndSecurityGroups.map(
     (accountsAndSecurityGroup) => (
-      <div className="col">
+      <div key={accountsAndSecurityGroup.account} className="col">
         <Account
           name={accountsAndSecurityGroup.account}
           securityGroups={accountsAndSecurityGroup.securityGroups}
@@ -14,7 +14,7 @@ function WhitelistIPs({ accountsAndSecurityGroups }) {
   );
   return (
     <div className="border border-primary">
-      <p class="fs-2">Whitelist IPs</p>
+      <p className="fs-2">Whitelist IPs</p>
       <div className="container">
         <div className="row">{renderAccounts}</div>
       </div>
@@ -23,4 +23,4 @@ function WhitelistIPs({ accountsAndSecurityGroups }) {
   );
 }
 
-export default WhitelistIPs;
+// to understand how to pass data from a child component to a parent component we will make the API call from this component instead of the Form component

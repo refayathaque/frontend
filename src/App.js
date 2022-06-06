@@ -1,4 +1,4 @@
-import WhitelistIPs from "./WhitelistIPs/WhitelistIPs";
+import WhitelistIPs from "./WhitelistIPs";
 import AllEnvironments from "./AllEnvironments";
 
 function App() {
