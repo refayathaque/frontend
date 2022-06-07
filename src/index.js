@@ -3,6 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+// https://create-react-app.dev/docs/adding-bootstrap/
+import makeServer from "./mockingAPICalls";
+
+if (process.env.NODE_ENV === "development") {
+  makeServer({ environment: "development" });
+}
+// https://miragejs.com/quickstarts/react/develop-an-app/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

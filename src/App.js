@@ -1,5 +1,6 @@
 import WhitelistIPs from "./WhitelistIPs";
 import AllEnvironments from "./AllEnvironments";
+import EC2 from "./EC2";
 
 function App() {
   const environments = [
@@ -40,7 +41,11 @@ function App() {
       <WhitelistIPs
         accountsAndSecurityGroups={accountsAndSecurityGroups}
       ></WhitelistIPs>
-      <AllEnvironments environments={environments} serverTypes={serverTypes}></AllEnvironments>
+      <AllEnvironments
+        environments={environments}
+        serverTypes={serverTypes}
+      ></AllEnvironments>
+      <EC2></EC2>
     </div>
   );
 }
