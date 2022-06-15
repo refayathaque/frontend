@@ -1,6 +1,8 @@
 import WhitelistIPs from "./WhitelistIPs";
 import AllEnvironments from "./AllEnvironments";
-import EC2 from "./EC2";
+import FetchAPICall from "./FetchAPICall";
+import PostAPICall from "./PostAPICall";
+import AddCars from "./AddCars";
 
 function App() {
   const environments = [
@@ -38,6 +40,7 @@ function App() {
 
   return (
     <div>
+      <AddCars></AddCars>
       <WhitelistIPs
         accountsAndSecurityGroups={accountsAndSecurityGroups}
       ></WhitelistIPs>
@@ -45,7 +48,8 @@ function App() {
         environments={environments}
         serverTypes={serverTypes}
       ></AllEnvironments>
-      <EC2></EC2>
+      <PostAPICall></PostAPICall>
+      <FetchAPICall></FetchAPICall>
     </div>
   );
 }
