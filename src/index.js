@@ -4,7 +4,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 // https://create-react-app.dev/docs/adding-bootstrap/
-import makeServer from "./mockingAPICalls";
+import makeServer from "./mirage";
+import { Provider } from "react-redux";
+import store from "./store";
 
 if (process.env.NODE_ENV === "development") {
   makeServer({ environment: "development" });
@@ -14,7 +16,9 @@ if (process.env.NODE_ENV === "development") {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,6 +1,6 @@
 import Form from "./Form";
 
-export default function PostAPICall() {
+export default function Post() {
   const addNewCar = (newCarData) => {
     const payload = {
       ...newCarData,

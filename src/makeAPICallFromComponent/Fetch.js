@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-export default function FetchAPICall() {
+export default function Fetch() {
   const [instances, setInstances] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -52,7 +52,7 @@ export default function FetchAPICall() {
   return (
     <div>
       <div className="border border-warning">
-        <p className="fs-2">FetchAPICall</p>
+        <p className="fs-2">Fetch</p>
         <div className="container">
           {isLoading && <p className="row">Loading...</p>}
           {!isLoading && error && <p>{error}</p>}
